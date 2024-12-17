@@ -25,7 +25,7 @@ Test if the shaders work by loading any map and running this command in console:
 You should see your screen get deformed in a wavy-like pattern.
 
 ## Creating a Shader
-To create a new shader, copy the `template_ps2x.fxc` file and rename it to whatever you like.  This example will rename it to `coolshader_ps2x.fxc` (note: do not change the `_ps2x` suffix).
+To create a new shader, copy the `template_ps2x.hlsl` file and rename it to whatever you like.  This example will rename it to `coolshader_ps2x.hlsl` (note: do not change the `_ps2x` suffix).
 
 Add this new shader to the list in `compile_shader_list.txt`.
 After you run `build_shaders.bat` again, your new shader should now get compiled.
