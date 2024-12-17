@@ -1,6 +1,6 @@
 // Example shader that applies a RGB color distortion to the screen
 
-#include "common.fxc"
+#include "common.hlsl"
 
 #define Time		Constants0.x
 #define Intensity	Constants0.y

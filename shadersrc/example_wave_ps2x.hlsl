@@ -1,6 +1,6 @@
 // Example shader that applies a wave distortion effect to the screen
 
-#include "common.fxc"
+#include "common.hlsl"
 
 #define Time		Constants0.x
 #define Frequency	Constants0.y

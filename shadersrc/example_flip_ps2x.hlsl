@@ -1,6 +1,6 @@
 // Example shader that flips the screen horizontally
 
-#include "common.fxc"
+#include "common.hlsl"
 
 float4 main( PS_INPUT i ) : COLOR
 {

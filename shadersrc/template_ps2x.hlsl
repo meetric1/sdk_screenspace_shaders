@@ -2,7 +2,7 @@
 
 // This contains parameters, etc that all shaders have available
 // All shaders should include this
-#include "common.fxc"
+#include "common.hlsl"
 
 // entry point
 float4 main( PS_INPUT i ) : COLOR

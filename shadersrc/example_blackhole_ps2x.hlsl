@@ -1,7 +1,7 @@
 // Example shader that tints dark areas harshly,
 // as the player approaches closer to a target
 
-#include "common.fxc"
+#include "common.hlsl"
 
 #define PlayerOrigin   Constants0.xyz
 #define TargetOrigin   Constants1.xyz
