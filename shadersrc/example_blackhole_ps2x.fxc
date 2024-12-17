@@ -21,12 +21,8 @@ float4 main( PS_INPUT i ) : COLOR
     float4 color = tex2D(TexBase, i.baseTexCoord);
 	
 	// tint darker areas only
-	float3 color_tint = float3(0.0, 0.0, 0.0);
-	for (float i = 0; i < 255; i++)
-	{
-		float luminance = Luminance(color.rgb) * i;
-		color_tint += lerp(color.xyz, TargetColor, intensity * step(luminance, 0.5));
-	}
+	float luminance = Luminance(color.rgb);
+    float3 color_tint = lerp(color.xyz, TargetColor, intensity * step(luminance, 0.5));
 	
 	return float4(color_tint, color.a);
 }
