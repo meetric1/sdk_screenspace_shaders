@@ -6,3 +6,4 @@ template_ps2x.fxc
 example_wave_ps2x.fxc
 example_glitch_ps2x.fxc
 example_blackhole_ps2x.fxc
+example_flip_ps2x.fxc
