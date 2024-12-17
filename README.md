@@ -60,7 +60,7 @@ If using these in a map: you will need to manually include the shader files if p
 # Limitations
 * Custom pixel shaders do not work on DirectX 8. The screen will simply render like normal.
 * Source is old and the shaders do not support everything that modern pixel shaders can offer, as the only shader model supported is 2.0b. For example, no for-loops and a limit of 32 const registers.
-* The screen will have a slight blur (like FXAA) due to downsampling. If this is an issue, apply the shader overlay only when necessary.
+* The screen will have a slight blur (like FXAA) due to downsampling. If this is an issue, apply the shader overlay only when necessary. UPDATE: this can be workarounded by setting alpha to 0 on untouched pixels (see hearts example)
 
 # Credits
 This repository uses a jerryrigged shader setup from [Source SDK 2013](https://github.com/ValveSoftware/source-sdk-2013) and the [standalone shader compiler](https://github.com/SCell555/ShaderCompile) by SCell555. 
