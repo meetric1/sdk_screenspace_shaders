@@ -1,5 +1,5 @@
 # sdk_screenspace_shaders
-SDK that allows you to easily create screenspace shaders for Source games.
+SDK that allows you to easily create custom screenspace pixel shaders for Source games.
 
 ![screenshot](thumbnail.jpg)
 
@@ -49,7 +49,12 @@ The basic overview is that the shader code is run for *every* pixel on the scree
 
 The screenspace pixel shader provided by the engine comes with support for up to 4 textures and 16 customizable float constants. The textures and constants can be modified dynamically in the VMT (see template.vmt), especially with material proxies.
 
-## Packing
+## Reloading the Shader
+Unfortunately, the shaders cannot be directly reloaded in-game without restarting the game itself. 
+
+But there is a workaround: you can rename a recompiled shader to something else, change the $pixshader in the VMT to this new name, then type `mat_reloadmaterial <vmt name>` to reload it.
+
+## Packing the Shader
 If using these in a map: you will need to manually include the shader files if packing with VIDE or CompilePal, as they will not autodetect the files.
 
 # Limitations
