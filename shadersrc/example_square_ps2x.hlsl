@@ -1,5 +1,4 @@
 // Example shader that displays a colored square in the middle of the screen
-// Adapted from https://www.shadertoy.com/view/clXyWB
 
 #include "common.hlsl"
 
