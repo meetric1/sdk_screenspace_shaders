@@ -1,3 +1,4 @@
 *.vcs
 *.inc
+*.py
 sound.cache
