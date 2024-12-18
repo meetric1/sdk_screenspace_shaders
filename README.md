@@ -77,7 +77,6 @@ If using these in a map: you will need to manually include the shader files if p
 # Limitations
 * Custom pixel shaders do not work on DirectX 8. The screen will simply render like normal.
 * Source is old and the shaders do not support everything that modern pixel shaders can offer, as the only shader model supported is 2.0b. For example, repeating for-loops don't exist, instead the compiler expands the instructions (which can lead to the instruction limit being hit quickly for large or complex loops).
-* The screen will have a slight blur (like FXAA) due to downsampling. If this is an issue, apply the shader overlay only when necessary. UPDATE: this can be workarounded by setting alpha to 0 on untouched pixels (see hearts example)
 * Native lightmap is not available if applying these to brush textures (it shouldbe be possible to sample a 2nd texture as the lightmap to workaround this)
 
 # Credits
