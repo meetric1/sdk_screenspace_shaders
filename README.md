@@ -64,4 +64,4 @@ If using these in a map: you will need to manually include the shader files if p
 
 # Credits
 This repository uses a jerryrigged shader setup from [Source SDK 2013](https://github.com/ValveSoftware/source-sdk-2013) and the [standalone shader compiler](https://github.com/SCell555/ShaderCompile) by SCell555. 
-Example shaders written by me.
+Some examples are adapted from [Shadertoy](https://www.shadertoy.com/).
