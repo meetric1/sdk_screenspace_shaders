@@ -23,7 +23,7 @@ Left 4 Dead 2 and Portal 2 have an extended version of this shader (which also s
 This repository contains everything required to compile shaders, you do not need to download anything else.
 
 Go into the `shadersrc` folder and run `build_shaders.bat`. This should build the template and example shaders successfully.
-The generated shaders are in the `shaders` folder
+The generated shaders are in the `shaders` folder. You can drag and drop a shader onto the `build_shader.bat` to only compile a specific shader.
 
 Create a new folder in your game's `custom` folder such as `my_shaders`.
 Copy the `shaders` folder to that new folder, then copy the `materials` folder from this repository to your new folder as well.
@@ -40,8 +40,8 @@ After you run `build_shaders.bat` again, your new shader should now get compiled
 
 Next up, you will need to copy the auto-generated VMT for your shader. Go into `materials/effects/shaders/` and copy the vmt file (e.g. `coolshader.vmt`).  You can put this file in your custom `my_shaders` folder using the same `materials/effects/shaders` file structure, or the regular game directory.
 
-## VSCode
-This repo includes a launch.json and a tasks.json to build the shaders using VSCode's build/debug commands.
+### VSCode
+If you are using VSCode, this repo includes a launch.json and a tasks.json to build the shaders using VSCode's build/debug commands.
 
 Clone this repository and open the main `sdk_screenspace_shaders` folder in VSCode by going to File > Open Folder.  Alternatively you can press Ctrl + K + O or Ctrl + M + O.
 
