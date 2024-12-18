@@ -8,3 +8,4 @@ example_glitch_ps2x.hlsl
 example_blackhole_ps2x.hlsl
 example_flip_ps2x.hlsl
 example_hearts_ps2x.hlsl
+example_ascii_ps2x.hlsl
