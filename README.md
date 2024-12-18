@@ -8,7 +8,7 @@ It has been discovered that the Source engine supports loading custom pixel shad
 The pixel shaders so far have been proven to work on the following:
 - Screen overlays
 - Brushes
-- Models (requires `$softwareskin 1` and `$translucent 1` in VMT)
+- Models
 - info_overlay
 - Decals
 
@@ -48,14 +48,16 @@ Clone this repository and open the main `sdk_screenspace_shaders` folder in VSCo
 You can now press either Ctrl + Shift + D and select "Build Current Shader".  Alternatively, press Ctrl + Shift + B to either build the current shader or all shaders (same as `build_shaders.bat`).
 
 ## Applying the Shader
-Your new shader is now setup, and you can apply it to players using two methods:
+Your new shader is now setup, and you can overlay it on players using two methods:
 
 - `SetScriptOverlayMaterial` (only in TF2 and HL2DM): Fire the `SetScriptOverlayMaterial` input on the !activator with `effects/shaders/coolshader` parameter (or use the equivalent VScript function).
 - `r_screenoverlay` : Use a [point_clientcommand](https://developer.valvesoftware.com/wiki/point_clientcommand) and fire the `Command` input with `r_screenoverlay effects/shaders/coolshader` as the parameter on the !activator.
 
 Note: in TF2 and HL2DM, you can stack shaders across two overlays together using both `SetScriptOverlayMaterial` and `r_screenoverlay`.
 
-You can also apply it to brushes. Change the $basetexture (or whatever texture you are sampling) to your desired brush texture.
+On brushes/info_overlay/decals, change the $basetexture (or whatever texture you are sampling) to your desired brush texture.
+
+On models, do the same thing as brushes, but also add `$softwareskin 1` and `$translucent 1` to the vmt. Both are required for the shader to work correctly.
 
 ## Modifying the Shader
 If you are new to shaders, they are written in a language named HLSL. You can find plenty of guides about this online. This repository comes with multiple example shaders that you can reference. 
