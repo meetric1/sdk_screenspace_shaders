@@ -2,14 +2,18 @@ screenspace_general
 {
 	$pixshader "example_depth_ps20"
 
-	$basetexture "_rt_PowerOfTwoFB"
+	$basetexture "_rt_FullFrameFB"
 	$texture1    ""
 	$texture2    ""
 	$texture3    ""
 
 	$x360appchooser 1
 	$ignorez        1
-	$fix_vm         16384
+	$fix_fb         32768
+	"<dx90"
+	{
+		$no_draw 1
+	}
 		
 	$copyalpha                 1
 	$alpha_blend_color_overlay 0
@@ -24,7 +28,7 @@ screenspace_general
 	{
 		Equals
 		{
-			srcVar1			$fix_vm
+			srcVar1			$fix_fb
 			resultVar		$flags2
 		}
 	}
