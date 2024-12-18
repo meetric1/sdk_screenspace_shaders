@@ -4,7 +4,13 @@ SDK that allows you to easily create custom screenspace pixel shaders for Source
 ![screenshot](thumbnail.jpg)
 
 # Background
-It has been discovered that the Source engine supports loading custom pixel shaders, via a completely undocumented shader named `screenspace_general`. The pixel shaders can be applied using a screen overlay or on brushes.
+It has been discovered that the Source engine supports loading custom pixel shaders, via a completely undocumented shader named `screenspace_general`.
+The pixel shaders so far have been proven to work on the following:
+- Screen overlays
+- Brushes
+- Models (requires `$softwareskin 1` and `$translucent 1` in VMT)
+- info_overlay
+- Decals
 
 Such custom shaders can be packed into maps or downloaded by servers, and it works on both Windows and Linux.
 
