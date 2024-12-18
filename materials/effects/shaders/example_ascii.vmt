@@ -1,6 +1,6 @@
 screenspace_general
 {
-	$pixshader "example_ascii6_ps20"
+	$pixshader "example_ascii_ps20"
 
 	$basetexture "_rt_PowerOfTwoFB"
 	$texture1    ""
