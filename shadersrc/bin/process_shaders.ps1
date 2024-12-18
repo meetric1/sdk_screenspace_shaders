@@ -16,6 +16,17 @@ while ($null -ne ($line = $fileList.ReadLine())) {
 		continue
 	}
 
+	# Create a vmt file from template for each shader if it doesn't exist
+	$baseName = [System.IO.Path]::GetFileNameWithoutExtension($line) -replace "_ps2x$", ""
+	$templatePath = Join-Path $PSScriptRoot "../../../materials/effects/shaders/template.vmt"
+	$vmtPath = Join-Path $PSScriptRoot "../../../materials/effects/shaders/$baseName.vmt"
+
+	if ((Test-Path $templatePath) -and -not (Test-Path $vmtPath)) {
+		$content = Get-Content $templatePath -Raw
+		$content = $content -replace '\$pixshader\s+"[^"]*"', "`$pixshader `"$baseName`_ps20`""
+		Set-Content -Path $vmtPath -Value $content
+	}
+
 	if ($Dynamic) {
 		& "$PSScriptRoot\ShaderCompile" "-dynamic" "-ver" $Version "-shaderpath" $File.DirectoryName $line
 		continue
