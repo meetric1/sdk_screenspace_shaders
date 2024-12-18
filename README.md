@@ -4,7 +4,13 @@ SDK that allows you to easily create custom screenspace pixel shaders for Source
 ![screenshot](thumbnail.jpg)
 
 # Background
-It has been discovered that the Source engine supports loading custom pixel shaders, via a completely undocumented shader named `screenspace_general`. The pixel shaders can be applied using a screen overlay.
+It has been discovered that the Source engine supports loading custom pixel shaders, via a completely undocumented shader named `screenspace_general`.
+The pixel shaders so far have been proven to work on the following:
+- Screen overlays
+- Brushes
+- Models (requires `$softwareskin 1` and `$translucent 1` in VMT)
+- info_overlay
+- Decals
 
 Such custom shaders can be packed into maps or downloaded by servers, and it works on both Windows and Linux.
 
@@ -49,6 +55,8 @@ Your new shader is now setup, and you can apply it to players using two methods:
 
 Note: in TF2 and HL2DM, you can stack shaders across two overlays together using both `SetScriptOverlayMaterial` and `r_screenoverlay`.
 
+You can also apply it to brushes. Change the $basetexture (or whatever texture you are sampling) to your desired brush texture.
+
 ## Modifying the Shader
 If you are new to shaders, they are written in a language named HLSL. You can find plenty of guides about this online. This repository comes with multiple example shaders that you can reference. 
 
@@ -70,6 +78,7 @@ If using these in a map: you will need to manually include the shader files if p
 * Custom pixel shaders do not work on DirectX 8. The screen will simply render like normal.
 * Source is old and the shaders do not support everything that modern pixel shaders can offer, as the only shader model supported is 2.0b. For example, repeating for-loops don't exist, instead the compiler expands the instructions (which can lead to the instruction limit being hit quickly for large or complex loops).
 * The screen will have a slight blur (like FXAA) due to downsampling. If this is an issue, apply the shader overlay only when necessary. UPDATE: this can be workarounded by setting alpha to 0 on untouched pixels (see hearts example)
+* Native lightmap is not available if applying these to brush textures (it shouldbe be possible to sample a 2nd texture as the lightmap to workaround this)
 
 # Credits
 This repository uses a jerryrigged shader setup from [Source SDK 2013](https://github.com/ValveSoftware/source-sdk-2013) and the [standalone shader compiler](https://github.com/SCell555/ShaderCompile) by SCell555. 
