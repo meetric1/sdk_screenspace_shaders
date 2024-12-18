@@ -11,3 +11,4 @@ example_hearts_ps2x.hlsl
 example_ascii_ps2x.hlsl
 example_square_ps2x.hlsl
 example_spin_ps2x.hlsl
+example_depth_ps2x.hlsl

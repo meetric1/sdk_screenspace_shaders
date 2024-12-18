@@ -1,6 +1,6 @@
 screenspace_general
 {
-	$pixshader "example_square_ps20"
+	$pixshader "example_depth_ps20"
 
 	$basetexture "_rt_PowerOfTwoFB"
 	$texture1    ""
@@ -11,7 +11,7 @@ screenspace_general
 	$ignorez        1
 	$fix_vm         16384
 		
-	$copyalpha                 0
+	$copyalpha                 1
 	$alpha_blend_color_overlay 0
 	$alpha_blend               0
 	$linearwrite               0
