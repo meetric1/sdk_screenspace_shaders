@@ -2,7 +2,6 @@
 param (
     [Parameter(Mandatory=$true, ValueFromPipeline=$true)][System.IO.FileInfo]$File,
     [Parameter(Mandatory=$true)][string]$Version,
-    [Parameter(Mandatory=$false)][switch]$Dynamic,
     [Parameter(Mandatory=$false)][System.UInt32]$Threads
 )
 
@@ -25,11 +24,6 @@ while ($null -ne ($line = $fileList.ReadLine())) {
 		$content = Get-Content $templatePath -Raw
 		$content = $content -replace '\$pixshader\s+"[^"]*"', "`$pixshader `"$baseName`_ps20`""
 		Set-Content -Path $vmtPath -Value $content
-	}
-
-	if ($Dynamic) {
-		& "$PSScriptRoot\ShaderCompile" "-dynamic" "-ver" $Version "-shaderpath" $File.DirectoryName $line
-		continue
 	}
 
 	if ($Threads -ne 0) {

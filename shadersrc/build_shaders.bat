@@ -112,9 +112,7 @@ title %ARG1% %SHVER%
 
 echo Building inc files and worklist for %inputbase%...
 
-set DYNAMIC=
-if "%dynamic_shaders%" == "1" set DYNAMIC=-Dynamic
-powershell -NoLogo -ExecutionPolicy Bypass -Command "bin\process_shaders.ps1 %DYNAMIC% -Version %SHVER% '%inputbase%.txt'"
+powershell -NoLogo -ExecutionPolicy Bypass -Command "bin\process_shaders.ps1 -Version %SHVER% '%inputbase%.txt'"
 
 %TTEXE% -diff %tt_start%
 echo Done!
