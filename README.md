@@ -41,7 +41,7 @@ Your new shader is now setup, and you can apply it to players using two methods:
 Note: you can stack shaders across two overlays together.
 
 ## Modifying the Shader
-If you are new to shaders, they are written in a language named HLSL. You can find plenty of guides about this online. This repository comes with 3 example shaders that you can reference. 
+If you are new to shaders, they are written in a language named HLSL. You can find plenty of guides about this online. This repository comes with multiple example shaders that you can reference. 
 
 The basic overview is that the shader code is run for *every* pixel on the screen. Each shader receives a texture coordinate representing where this pixel is, and it must return the new RGBA color value of the pixel at this position.
 
