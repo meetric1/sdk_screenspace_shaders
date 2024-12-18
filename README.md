@@ -8,6 +8,8 @@ It has been discovered that the Source engine supports loading custom pixel shad
 
 Such custom shaders can be packed into maps or downloaded by servers, and it works on both Windows and Linux.
 
+This shader happens to work by a complete coincidence. A leftover shader variable for the Orange Box on Xbox 360 (`$x360appchooser 1`) allows color writes to be enabled on the shader, making this possible (normally this shader wouldn't render anything).
+
 This has only been tested on Team Fortress 2, but it should also work for Counter Strike Source, Day of Defeat Source, Half Life 2 Deathmatch and Portal 1.
 Left 4 Dead 2 and Portal 2 have an extended version of this shader (which also supports setting a custom vertex shader) but this has not been researched.
 
