@@ -5,8 +5,8 @@ screenspace_general
 	$pixshader "example_chromaticaberration_ps20"
 
 	// Textures to use
-	// Use _rt_PowerOfTwoFB to fetch the screen texture (framebuffer)
-	$basetexture "_rt_PowerOfTwoFB"
+	// Use _rt_FullFrameFB to fetch the screen texture (framebuffer)
+	$basetexture "_rt_FullFrameFB"
 	$texture1    ""
 	$texture2    ""
 	$texture3    ""
@@ -14,7 +14,11 @@ screenspace_general
 	// Mandatory parameters, do not change these
 	$x360appchooser 1
 	$ignorez        1
-	$fix_vm         16384
+	$fix_fb         32768
+	"<dx90"
+	{
+		$no_draw 1
+	}
 	
 	// Various color/alpha mixing parameters
 	// usually you don't need to change these
@@ -47,10 +51,10 @@ screenspace_general
 	
 	Proxies
 	{
-		// Fixes the viewmodel not rendering/other issues, do not remove 
+		// Fixes the framebuffer to show up
 		Equals
 		{
-			srcVar1			$fix_vm
+			srcVar1			$fix_fb
 			resultVar		$flags2
 		}
 	}
