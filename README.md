@@ -32,15 +32,22 @@ To create a new shader, copy the `template_ps2x.hlsl` file and rename it to what
 Add this new shader to the list in `compile_shader_list.txt`.
 After you run `build_shaders.bat` again, your new shader should now get compiled.
 
-Next up, you will need to create a VMT for your shader. Go into `materials/effects/shaders/` and copy the `template.vmt`, and rename it to something like `coolshader.vmt`.
-Open the VMT and change the $pixshader line to the name of your shader with a `_ps20` suffix, e.g. `coolshader_ps20`.
+Next up, you will need to copy the auto-generated VMT for your shader. Go into `materials/effects/shaders/` and copy the vmt file (e.g. `coolshader.vmt`).  You can put this file in your custom `my_shaders` folder using the same `materials/effects/shaders` file structure, or the regular game directory.
 
+## VSCode
+This repo includes a launch.json and a tasks.json to build the shaders using VSCode's build/debug commands.
+
+Clone this repository and open the main `sdk_screenspace_shaders` folder in VSCode by going to File > Open Folder.  Alternatively you can press Ctrl + K + O or Ctrl + M + O.
+
+You can now press either Ctrl + Shift + D and select "Build Current Shader".  Alternatively, press Ctrl + Shift + B to either build the current shader or all shaders (same as `build_shaders.bat`).
+
+## Applying the Shader
 Your new shader is now setup, and you can apply it to players using two methods:
 
 - `SetScriptOverlayMaterial` (only in TF2 and HL2DM): Fire the `SetScriptOverlayMaterial` input on the !activator with `effects/shaders/coolshader` parameter (or use the equivalent VScript function).
 - `r_screenoverlay` : Use a [point_clientcommand](https://developer.valvesoftware.com/wiki/point_clientcommand) and fire the `Command` input with `r_screenoverlay effects/shaders/coolshader` as the parameter on the !activator.
 
-Note: you can stack shaders across two overlays together.
+Note: in TF2 and HL2DM, you can stack shaders across two overlays together using both `SetScriptOverlayMaterial` and `r_screenoverlay`.
 
 ## Modifying the Shader
 If you are new to shaders, they are written in a language named HLSL. You can find plenty of guides about this online. This repository comes with multiple example shaders that you can reference. 
