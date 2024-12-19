@@ -58,7 +58,7 @@ Note: in TF2 and HL2DM, you can stack shaders across two overlays together using
 
 On brushes/info_overlay/decals, change the $basetexture (or whatever texture you are sampling) to your desired brush texture.
 
-On models, do the same thing as brushes, but also add `$softwareskin 1` and `$translucent 1` to the vmt. Both are required for the shader to work correctly.
+On models, do the same thing as brushes, but also add `$softwareskin 1` and `$translucent 1` to the vmt. Both are required for the shader to work correctly. In the .qc, add `$mostlyopaque` as well.
 
 ## Modifying the Shader
 If you are new to shaders, they are written in a language named HLSL. You can find plenty of guides about this online. This repository comes with multiple example shaders that you can reference. 
