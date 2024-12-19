@@ -65,9 +65,26 @@ If you are new to shaders, they are written in a language named HLSL. You can fi
 
 The basic overview is that the shader code is run for *every* pixel on the screen. Each shader receives a texture coordinate representing where this pixel is, and it must return the new RGBA color value of the pixel at this position.
 
-[Shadertoy](https://www.shadertoy.com/) is a good website to look for inspiration or see how things are done. Note that these are written in GLSL, a similar language to HLSL with minor differences.
+[Shadertoy](https://www.shadertoy.com/) is a good website to look for inspiration or see how things are done. Note that these are written in GLSL, a similar language to HLSL with some differences (see below).
 
 The screenspace pixel shader provided by the engine comes with support for up to 4 textures and 16 customizable float constants. The textures and constants can be modified dynamically in the VMT (see template.vmt), especially with material proxies.
+
+### Porting GLSL to HLSL
+
+Shaders written in GLSL can be ported to HLSL with some changes as follows. This is not a comprehensive list, there may be more changes required.
+
+* Different main function form (copy it from the examples)
+* `vec2`, `vec3`, `vec4` -> `float2`, `float3`, `float4`
+* `mat2`, `mat3`, `mat4` -> `float2x2`, `float3x3`, `float4x4`
+* `texture` -> `tex2D`
+* `atan` -> `atan2`
+* `fract` -> `frac`
+* `mix` -> `lerp`
+* `fma` -> `mad`
+* Constructors need all arguments e.g. `vec3(1.0)` -> `float(1.0, 1.0, 1.0)`
+* Origin in GLSL is bottom left. In HLSL it's top left. (UV y coordinate is flipped)
+* Shadertoy passes texture coordinates (`fragCoord`) in pixel form (0-width, 0-height). Source passes `baseTextureCoord` in normalized form (0-1, 0-1). The texture dimensions can be recovered using `TexBaseSize` etc.
+* GLSL is matrix column-major while HLSL is row-major. Matrices need to be re-ordered (i.e. transposed)
 
 ## Reloading the Shader
 Unfortunately, the shaders cannot be directly reloaded in-game without restarting the game itself. 
