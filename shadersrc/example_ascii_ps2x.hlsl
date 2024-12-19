@@ -21,7 +21,11 @@ float character(int n, float2 p)
 
 float4 main( PS_INPUT i ) : COLOR
 {
-	float2 pix = i.baseTexCoord * (1.0 / TexBaseSize);
+	// see below for why this is needed 
+	// https://www.gamedev.net/blogs/entry/1848486-understanding-half-pixel-and-half-texel-offsets/ 
+	float2 half_pix = float2(0.5, 0.5) * TexBaseSize;
+	
+	float2 pix = (i.baseTexCoord + half_pix) * (1.0 / TexBaseSize);
 	float3 col = tex2D(TexBase, floor(pix / 8.0) * 8.0 / (1.0 / TexBaseSize)).rgb;	
 	
 	float gray = 0.3 * col.r + 0.59 * col.g + 0.11 * col.b;	 
