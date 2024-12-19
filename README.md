@@ -11,6 +11,7 @@ The pixel shaders so far have been proven to work on the following:
 - Models
 - info_overlay
 - Decals
+- Particles
 
 Such custom shaders can be packed into maps or downloaded by servers, and it works on both Windows and Linux.
 
