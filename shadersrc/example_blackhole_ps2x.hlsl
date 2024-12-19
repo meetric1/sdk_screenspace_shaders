@@ -18,7 +18,7 @@ float4 main( PS_INPUT i ) : COLOR
     float distance = length(PlayerOrigin - TargetOrigin);
     float intensity = saturate(1.0 - (distance / TargetRadius));
 
-    float4 color = tex2D(TexBase, i.baseTexCoord);
+    float4 color = tex2D(TexBase, i.uv);
 	
 	// tint darker areas only
 	float luminance = Luminance(color.rgb);

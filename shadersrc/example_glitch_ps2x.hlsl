@@ -9,7 +9,7 @@
 
 float4 main( PS_INPUT i ) : COLOR
 {
-    float2 uv = i.baseTexCoord;
+    float2 uv = i.uv;
 
     float glitch = sin(uv.y * 10.0 + Time * Speed) * Distortion * 0.005;
     float shift = sin(Time * Speed) * Intensity;

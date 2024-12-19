@@ -8,7 +8,7 @@
 float4 main( PS_INPUT i ) : COLOR
 {
 	// copy each framebuffer pixel 1:1 (effectively does nothing)
-	float4 result = tex2D(TexBase, i.baseTexCoord.xy);
+	float4 result = tex2D(TexBase, i.uv.xy);
 	
 	return result;
 }

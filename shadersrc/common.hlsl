@@ -19,8 +19,17 @@ const float4 Constants1 : register( c1 );
 const float4 Constants2 : register( c2 );
 const float4 Constants3 : register( c3 );
 
-// interpolated vertex data for the shader, do not change
+// interpolated vertex data from vertex shader, do not change
 struct PS_INPUT
 {
-	float2 baseTexCoord : TEXCOORD0;
+	// position in clip space
+	float4 pos			: POSITION;	
+	// texture coordinates
+	float2 uv		    : TEXCOORD0;
+	// always (0, 0)
+	float2 zeros        : TEXCOORD1;
+	// unused
+	float2 texcoord2    : TEXCOORD2;
+	// vertex color (if mesh has one)
+	float4 color		: TEXCOORD3;
 };

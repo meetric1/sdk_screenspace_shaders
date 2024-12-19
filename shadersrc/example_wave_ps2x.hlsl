@@ -9,10 +9,10 @@
 float4 main( PS_INPUT i ) : COLOR
 {
     float2 offset;
-    offset.x = sin(i.baseTexCoord.y * Frequency + Time) * Amplitude;
-    offset.y = cos(i.baseTexCoord.x * Frequency + Time * 1.5) * Amplitude;
+    offset.x = sin(i.uv.y * Frequency + Time) * Amplitude;
+    offset.y = cos(i.uv.x * Frequency + Time * 1.5) * Amplitude;
 	
-    float2 new_uv = i.baseTexCoord + offset;
+    float2 new_uv = i.uv + offset;
 	
 	return tex2D(TexBase, new_uv);	
 }

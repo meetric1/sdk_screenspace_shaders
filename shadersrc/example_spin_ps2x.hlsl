@@ -9,7 +9,7 @@
 
 float4 main( PS_INPUT i ) : COLOR
 {
-	float2 uv = i.baseTexCoord - 0.5;
+	float2 uv = i.uv - 0.5;
     float aspect = TexBaseSize.x / TexBaseSize.y;
 
     uv.x += (abs(fmod(Time * 0.5, 4.0) - 2.0) - 1.0) * 0.5625;

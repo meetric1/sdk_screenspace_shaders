@@ -4,7 +4,7 @@
 
 float4 main( PS_INPUT i ) : COLOR
 {
-	float2 uv = i.baseTexCoord;
+	float2 uv = i.uv;
 	
     float2 d = abs((uv - 0.5) * 2.0);
     d = pow(d, float2(2.0, 2.0));

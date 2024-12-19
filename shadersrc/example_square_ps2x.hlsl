@@ -17,7 +17,7 @@ float4 main( PS_INPUT i ) : COLOR
 	float4 color = float4(0.0, 0.0, 0.0, 0.0);
 	 
 	// map from normalized to screen cordinates [0, 1] -> [0, size]
-	float2 uv = i.baseTexCoord;
+	float2 uv = i.uv;
 	float2 screen_point = uv / TexBaseSize;
 	
 	// center of screen in screen coordinates

@@ -44,7 +44,7 @@ float3 hsb2rgb(float h, float s, float b)
 
 float4 main( PS_INPUT i ) : COLOR
 {
-	float2 uv = i.baseTexCoord - 0.5;
+	float2 uv = i.uv - 0.5;
 	
 	// Aspect ratio correction
 	uv.x *= 1.0 / (TexBaseSize.x / TexBaseSize.y);
