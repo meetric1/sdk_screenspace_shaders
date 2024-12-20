@@ -22,8 +22,6 @@ const float4 Constants3 : register( c3 );
 // interpolated vertex data from vertex shader, do not change
 struct PS_INPUT
 {
-	// position in clip space
-	float4 pos			: POSITION;	
 	// texture coordinates
 	float2 uv		    : TEXCOORD0;
 	// always (0, 0)
