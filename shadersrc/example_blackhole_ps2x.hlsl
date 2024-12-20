@@ -3,7 +3,9 @@
 
 #include "common.hlsl"
 
+// Instead of PlayerOrigin you can also use the shader's EyePosition (see common.hlsl)
 #define PlayerOrigin   Constants0.xyz
+
 #define TargetOrigin   Constants1.xyz
 #define TargetRadius   Constants1.w
 #define TargetColor    Constants2.xyz

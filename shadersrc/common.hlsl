@@ -19,6 +19,24 @@ const float4 Constants1 : register( c1 );
 const float4 Constants2 : register( c2 );
 const float4 Constants3 : register( c3 );
 
+// eye position in world coordinates
+const float4 EyePosition : register( c11 );
+
+// xyz will be 0, 0, 0 (black) if mesh is rendered without fog
+const float4 FogColor    : register( c29 );
+// range of compressed depth buffer. usually 1.0 / 192
+#define DepthRange         FogColor.w 
+
+const float4 HDRParams   : register( c30 );
+// exposure scale (bounded by tonemap controller's min/max)
+#define TonemapScale       HDRParams.x
+// 16 in HDR, 4.59479 in LDR
+#define LightmapScale      HDRParams.y
+// 16 in HDR, 1 in LDR
+#define EnvmapScale        HDRParams.z
+// gamma, equivalent to pow(TonemapScale, 1.0 / 2.2)
+#define GammaScale         HDRParams.w
+
 // interpolated vertex data from vertex shader, do not change
 struct PS_INPUT
 {
