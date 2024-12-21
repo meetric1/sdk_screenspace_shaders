@@ -15,10 +15,13 @@ The pixel shaders so far have been proven to work on the following:
 
 Such custom shaders can be packed into maps or downloaded by servers, and it works on both Windows and Linux.
 
-This shader happens to work by a complete coincidence. A leftover shader variable for the Orange Box on Xbox 360 (`$x360appchooser 1`) allows color writes to be enabled on the shader, making this possible (normally this shader wouldn't render anything).
+This has only been extensively tested on Team Fortress 2 and Counter-Strike: Source, but it should also work for Day of Defeat Source, Half Life 2 etc.
 
-This has only been tested on Team Fortress 2, but it should also work for Counter Strike Source, Day of Defeat Source, Half Life 2 Deathmatch and Portal 1.
-Left 4 Dead 2 and Portal 2 have an extended version of this shader (which also supports setting a custom vertex shader) but this has not been researched.
+Left 4 Dead 2 and Portal 2 have an extended version of this shader which also supports setting a custom vertex shader. Setting up a custom vertex shader has not been researched yet. 
+
+To allow the shader to work on anything that isn't a screen overlay, the `$x360appchooser 1` variable must be set (enables vertex transformations).
+Unfortunately, in L4D2 and Portal 2 this variable does not exist, therefore vertices are not transformed by the view projection matrix.
+This could be workarounded by defining a custom vertex shader.
 
 # Usage
 This repository contains everything required to compile shaders, you do not need to download anything else.
@@ -98,6 +101,7 @@ If using these in a map: you will need to manually include the shader files if p
 * Custom pixel shaders do not work on DirectX 8. The screen will simply render like normal.
 * Source is old and the shaders do not support everything that modern pixel shaders can offer, as the only shader model supported is 2.0b. For example, repeating for-loops don't exist, instead the compiler expands the instructions (which can lead to the instruction limit being hit quickly for large or complex loops).
 * Native lightmap is not available if applying these to brush textures (it shouldbe be possible to sample a 2nd texture as the lightmap to workaround this)
+* Texture dimension constants are not available in Left 4 Dead 2 and Portal 2 (no workaround known yet)
 
 # Credits
 This repository uses a jerryrigged shader setup from [Source SDK 2013](https://github.com/ValveSoftware/source-sdk-2013) and the [standalone shader compiler](https://github.com/SCell555/ShaderCompile) by SCell555. 

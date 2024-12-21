@@ -8,16 +8,19 @@ sampler Tex3    : register( s3 ); // $texture3
 
 // normalized dimensions for each texture above
 // (x = 1.0 / width, y = 1.0 / height)
+// NOT AVAILABLE IN L4D2/PORTAL 2
 float2 TexBaseSize : register( c4 );
 float2 Tex1Size    : register( c5 );
 float2 Tex2Size    : register( c6 );
 float2 Tex3Size    : register( c7 );
 
-// customizable parameters $c0, $c1, $c2, $c3
+// customizable parameters $c0, $c1, $c2, $c3, $c4
 const float4 Constants0 : register( c0 );
 const float4 Constants1 : register( c1 );
 const float4 Constants2 : register( c2 );
 const float4 Constants3 : register( c3 );
+// ONLY AVAILABLE IN L4D2/PORTAL2 (
+const float4 Constants4 : register( c4 );
 
 // eye position in world coordinates
 const float4 EyePosition : register( c11 );
