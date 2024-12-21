@@ -51,4 +51,7 @@ struct PS_INPUT
 	float2 texcoord2    : TEXCOORD2;
 	// vertex color (if mesh has one)
 	float4 color		: TEXCOORD3;
+	// screenspace position
+	// SHADER MODEL 3 ONLY
+	float2 pos			: VPOS;
 };
