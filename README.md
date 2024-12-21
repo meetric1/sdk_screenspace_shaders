@@ -19,10 +19,6 @@ This has only been extensively tested on Team Fortress 2 and Counter-Strike: Sou
 
 Left 4 Dead 2 and Portal 2 have an extended version of this shader which also supports setting a custom vertex shader. Setting up a custom vertex shader has not been researched yet. 
 
-To allow the shader to work on anything that isn't a screen overlay, the `$x360appchooser 1` variable must be set (enables vertex transformations).
-Unfortunately, in L4D2 and Portal 2 this variable does not exist, therefore vertices are not transformed by the view projection matrix.
-This could be workarounded by defining a custom vertex shader.
-
 # Usage
 This repository contains everything required to compile shaders, you do not need to download anything else.
 
@@ -71,6 +67,10 @@ The basic overview is that the shader code is run for *every* pixel on the scree
 [Shadertoy](https://www.shadertoy.com/) is a good website to look for inspiration or see how things are done. Note that these are written in GLSL, a similar language to HLSL with some differences (see below).
 
 The screenspace pixel shader provided by the engine comes with support for up to 4 textures and 16 customizable float constants. The textures and constants can be modified dynamically in the VMT (see template.vmt), especially with material proxies.
+
+To allow the shader to work on anything that isn't a screen overlay, the `$x360appchooser 1` variable must be set (enables vertex transformations, the template sets this to 1 by default).
+Unfortunately, in L4D2 and Portal 2 this variable does not exist, therefore vertices are not transformed by the view projection matrix.
+This could be workarounded by defining a custom vertex shader (not researched yet).
 
 ### Porting GLSL to HLSL
 
