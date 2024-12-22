@@ -14,6 +14,8 @@ The pixel shaders so far have been proven to work on the following:
 - Particles
 
 Such custom shaders can be packed into maps or downloaded by servers, and it works on both Windows and Linux.
+However in Portal 2 and CS:GO, they do not allow loading shaders outside of the `platform` directory, so custom shaders cannot be used by maps or servers there.
+Garry's Mod also cannot load custom shaders outside of the main `garrysmod` directory, therefore workshop addons or maps cannot use them. See the [relevant issue](https://github.com/Facepunch/garrysmod-requests/issues/2564).
 
 This has only been extensively tested on Team Fortress 2 and Counter-Strike: Source, but it should also work for Day of Defeat Source, Half Life 2 etc.
 
