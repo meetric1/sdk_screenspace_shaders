@@ -23,7 +23,7 @@ const float4 Constants3 : register( c3 );
 const float4 Constants4 : register( c4 );
 
 // eye position in world coordinates
-const float4 EyePosition : register( c11 );
+const float4 EyePosition : register( c10 );
 
 // xyz will be 0, 0, 0 (black) if mesh is rendered without fog
 const float4 FogColor    : register( c29 );
