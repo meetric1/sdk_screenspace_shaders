@@ -28,11 +28,12 @@ screenspace_general
 
 	Proxies
 	{
-		Equals
-		{
-			srcVar1			$fix_fb
-			resultVar		$flags2
-		}
+		// This shader doesn't read the framebuffer, so don't need to update it
+		//Equals
+		//{
+		//	srcVar1			$fix_fb
+		//	resultVar		$flags2
+		//}
 		CurrentTime
 		{
 			resultVar		$c0_x

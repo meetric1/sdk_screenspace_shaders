@@ -51,7 +51,10 @@ screenspace_general
 	
 	Proxies
 	{
-		// Fixes the framebuffer to show up
+		// Updates the framebuffer
+		// You only need this if you are going to be *reading* the framebuffer
+		// If you aren't using the framebuffer, or are only fetching its dimensions,
+		// you DON'T need this and it will save you some performance
 		Equals
 		{
 			srcVar1			$fix_fb
