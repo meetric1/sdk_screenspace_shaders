@@ -13,3 +13,4 @@ example_square_ps2x.hlsl
 example_spin_ps2x.hlsl
 example_depth_ps2x.hlsl
 example_chromaticaberration_ps2x.hlsl
+example_sdf_ps2x.hlsl
