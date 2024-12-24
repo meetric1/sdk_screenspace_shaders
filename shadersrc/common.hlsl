@@ -23,6 +23,8 @@ const float4 Constants3 : register( c3 );
 const float4 Constants4 : register( c4 );
 
 // eye position in world coordinates
+// WARNING: not available on screen overlays
+// use PlayerPosition VMT proxy as a workaround
 const float4 EyePosition : register( c10 );
 
 // xyz will be 0, 0, 0 (black) if mesh is rendered without fog
