@@ -23,7 +23,8 @@ const float4 Constants3 : register( c3 );
 const float4 Constants4 : register( c4 );
 
 // eye position in world coordinates
-// WARNING: appears to return garbage on screen overlays for some users
+// WARNING: this is calculated from the view matrix
+// on a screen overlay, this will return near-zero values
 // use PlayerPosition VMT proxy as a workaround
 const float4 EyePosition : register( c10 );
 
