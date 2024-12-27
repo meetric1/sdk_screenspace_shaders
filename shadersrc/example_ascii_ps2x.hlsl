@@ -5,7 +5,7 @@
 
 float character(int n, float2 p)
 {
-	p = floor(p * float2(-4.0, 4.0) + 2.5);
+	p = floor(p * float2(-4.0, -4.0) + 2.5);
 	if (clamp(p.x, 0.0, 4.0) == p.x)
 	{
 		if (clamp(p.y, 0.0, 4.0) == p.y)	
