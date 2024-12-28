@@ -27,10 +27,10 @@ while ($null -ne ($line = $fileList.ReadLine())) {
 	}
 
 	if ($Threads -ne 0) {
-		& "$PSScriptRoot\ShaderCompile" "-threads" $Threads "-ver" $Version "-shaderpath" $File.DirectoryName $line
+		& "$PSScriptRoot\ShaderCompile" "/O" "3" "-threads" $Threads "-ver" $Version "-shaderpath" $File.DirectoryName $line
 		continue
 	}
 
-	& "$PSScriptRoot\ShaderCompile" "-ver" $Version "-shaderpath" $File.DirectoryName $line
+	& "$PSScriptRoot\ShaderCompile" "/O" "3" "-ver" $Version "-shaderpath" $File.DirectoryName $line
 }
 $fileList.Close()

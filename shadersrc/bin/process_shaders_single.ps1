@@ -21,8 +21,8 @@ if ((Test-Path $templatePath) -and -not (Test-Path $vmtPath)) {
 }
 
 if ($Threads -ne 0) {
-	& "$PSScriptRoot\ShaderCompile" "-threads" $Threads "-ver" $Version "-shaderpath" $File.DirectoryName $File.Name
+	& "$PSScriptRoot\ShaderCompile" "/O" "3" "-threads" $Threads "-ver" $Version "-shaderpath" $File.DirectoryName $File.Name
 	return
 }
 
-& "$PSScriptRoot\ShaderCompile" "-ver" $Version "-shaderpath" $File.DirectoryName $File.Name
+& "$PSScriptRoot\ShaderCompile" "/O" "3" "-ver" $Version "-shaderpath" $File.DirectoryName $File.Name

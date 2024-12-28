@@ -7,4 +7,4 @@ if "%~1"=="" (
     exit /b
 )
 
-bin\ShaderCompile.exe -ver 20b -shaderpath "%cd%" %1
+bin\ShaderCompile.exe /O 3 -ver 20b -shaderpath "%cd%" %1
