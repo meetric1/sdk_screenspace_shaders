@@ -7,4 +7,15 @@ if "%~1"=="" (
     exit /b
 )
 
-bin\ShaderCompile.exe /O 3 -ver 20b -shaderpath "%cd%" %1
+REM Detect shader version
+
+set "filename=%~nx1"
+set "char7=%filename:~-7,1%"
+
+if "%char7%" == "3" (
+	bin\ShaderCompile.exe /O 3 -ver 30 -shaderpath "%cd%" %1
+) else (
+	bin\ShaderCompile.exe /O 3 -ver 20b -shaderpath "%cd%" %1
+)
+
+pause
